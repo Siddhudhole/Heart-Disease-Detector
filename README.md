@@ -1,29 +1,35 @@
 # Heart-Disease-Detector
 
-## HOW TO USE :
 
-## Steps :
+### HOW TO USE :
+
+### Steps :
 
 ### Run the following command :
 
-#### 1) Create a new virtual environment:
+#### 1) Clone Github Repository :
+
+
+        git clone https://github.com/Siddhudhole/Heart-Disease-Detector.git 
+
+#### 2) Create a new virtual environment:
 
 
         Conda create -p venv  python==3.9 -y 
 
-#### 2) Activate  virtual environment:
+#### 3) Activate  virtual environment:
 
 
         Conda activate ./venv 
 
 
-#### 3) Install the dependencies:
+#### 4) Install the dependencies:
 
 
         pip install -r requirements.txt  
 
     
-#### 4) Run application :
+#### 5) Run application :
 
 
         streamlit run app.py 
