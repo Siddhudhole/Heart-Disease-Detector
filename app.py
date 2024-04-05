@@ -10,7 +10,7 @@ from sklearn.tree  import DecisionTreeClassifier
 model_path = os.path.join('artifacts','model.pkl')
 model = pickle.load(open(model_path,'rb'))   
 
-st.title("----Heart Disease Detector----")
+st.markdown("<h1 style='text-align: center; color: red;'>Heart Disease Detector</h1>", unsafe_allow_html=True)
 st.markdown('----------------------------------------------------------------') 
 
 #age,gender,impluse,pressurehight,pressurelow,glucose,kcm,troponin,
@@ -38,10 +38,26 @@ elif gender == 'Male':
    gender = 1 
 
 if st.button(label='Predict'):
-   data = pd.DataFrame(np.asarray([age,gender,impluse,pressurehight,pressurelow,glucose,kcm,troponin]).reshape(1,-1),
-   columns=['age','gender','impluse','pressurehight','pressurelow','glucose','kcm','troponin'])  
-   result = model.predict(data)
-   if result[0] == 0 :
-      st.success('You do not have heart disease')
-   elif result[0] == 1 : 
-      st.success('You have heart disease')
+   if age != 0 and pressurehight !=0 and pressurelow !=0 and  impluse !=0 and glucose != 0 :
+      data = pd.DataFrame(np.asarray([age,gender,impluse,pressurehight,pressurelow,glucose,kcm,troponin]).reshape(1,-1),
+                          columns=['age','gender','impluse','pressurehight','pressurelow','glucose','kcm','troponin'])  
+      result = model.predict(data)  
+ 
+      if result[0] == 0 :
+         st.success('You do not have heart disease')
+   
+      elif result[0] == 1 : 
+         st.error('You have heart disease')
+         if glucose < 70 or  glucose > 100 :
+            st.header('Warnings')
+            st.error('You have abnormal Glucose Levels') 
+            st.write('Please rech the doctor')       
+      
+   
+
+   else :
+      st.error('Please fill all the fields') 
+   
+
+
+      
