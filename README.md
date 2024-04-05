@@ -1,6 +1,6 @@
 # Heart-Disease-Detector
 
-This Project is licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http http://www.apache.org/licenses/LICENSE-2 Optional License Agreement
+This project implements a Decision tree classifier model for the classification of heart disease.
 
 
 ### HOW TO USE :
