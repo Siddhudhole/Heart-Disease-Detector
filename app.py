@@ -10,6 +10,8 @@ from sklearn.tree  import DecisionTreeClassifier
 model_path = os.path.join('artifacts','model.pkl')
 model = pickle.load(open(model_path,'rb'))   
 
+st.set_page_config(layout="wide")
+
 st.markdown("<h1 style='text-align: center; color: red;'>Heart Disease Detector</h1>", unsafe_allow_html=True)
 st.markdown('----------------------------------------------------------------') 
 
